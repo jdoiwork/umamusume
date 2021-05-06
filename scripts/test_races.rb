@@ -3,4 +3,8 @@
 require "yaml"
 require "pp"
 
-PP.pp YAML.load_file("../data/races.yaml")
+begin
+    PP.pp YAML.load_file("../data/races.yaml")
+rescue => e
+    print e.message
+end
